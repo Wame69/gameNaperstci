@@ -1,0 +1,31 @@
+﻿<Window x:Class="NapierstkiGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Игра Наперстки" Height="400" Width="600">
+    <Grid>
+        <!-- Кнопка для начала игры -->
+        <Button x:Name="StartButton" Content="Начать игру" Width="100" Height="40"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"
+                Click="StartButton_Click"/>
+
+        <!-- Сообщение о результате -->
+        <TextBlock x:Name="ResultText" Text="Угадайте, где сюрприз!"
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,30"
+                   FontSize="16" FontWeight="Bold"/>
+
+        <!-- Canvas для размещения стаканчиков и мячика -->
+        <Canvas x:Name="GameCanvas" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="300">
+            <!-- Мячик -->
+            <Image x:Name="Ball" Source="/ball.png" Width="30" Height="30"
+                   Canvas.Left="235" Canvas.Top="120" Visibility="Hidden"/>
+
+            <!-- Стаканчики -->
+            <Image x:Name="Cup1" Source="/cup.png" Width="100" Height="100" Canvas.Left="100" Canvas.Top="150"
+                   MouseLeftButtonDown="Cup_Click"/>
+            <Image x:Name="Cup2" Source="/cup.png" Width="100" Height="100" Canvas.Left="200" Canvas.Top="150"
+                   MouseLeftButtonDown="Cup_Click"/>
+            <Image x:Name="Cup3" Source="/cup.png" Width="100" Height="100" Canvas.Left="300" Canvas.Top="150"
+                   MouseLeftButtonDown="Cup_Click"/>
+        </Canvas>
+    </Grid>
+</Window>
